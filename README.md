@@ -1,21 +1,24 @@
-# [motan初探](https://github.com/weibocom/motan)
-          最近逛oschina的时候，偶然看到有个项目使用到了motan这种rpc框架，刚开始根本就不知道还有这种rpc框架，因为本人也比较
-      喜欢研究一些rpc框架，包括最基本的rpi、dubbo、zbus、hessian、thrift、cxf等。所以看到这个框架的时候，首先百度了一些，
-      不查不知道，一查吓一跳，原来motan是新浪微博开源出来的一款内部使用的rpc框架，所以这两天也就一直在github查看motan官方，
-      然后git clone下源代码，然后自己动手编写了这个测试项目，主要是想要测试下rpc框架的性能，同时也想要学习下微博开源出来的
-      技术，据他们的介绍，可以支持微博亿级的方法调用。
+#mumu-rpc-motan
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/babymm/mumu-rpc-motan/blob/master/LICENSE)[![Maven Central](https://img.shields.io/maven-central/v/com.weibo/motan.svg?label=Maven%20Central)](https://mvnrepository.com/search?q=motan)[![Build Status](https://img.shields.io/travis/weibocom/motan/master.svg?label=Build)](https://github.com/babymm/mumu-rpc-motan)[![OpenTracing-1.0 Badge](https://img.shields.io/badge/OpenTracing--1.0-enabled-blue.svg)](http://opentracing.io)
+>[mumu-rpc-motan](https://github.com/babymm/mumu-rpc-motan)是一个以[weibo montan](https://github.com/weibocom/motan)为基础的测试程序，了解motan rpc架构设计和编程思想。同时也是想要多了解一些rpc框架，为项目做好rpc技术选型。
+- - - - -
+#项目简述
 
-          本项目分为接口层，服务层，客户端层。接口层定义一些接口（测试接口比较简单，没有做实体...），服务层实现接口，并且
-      开启服务，客户端层主要是调用开放的接口。按照https://github.com/weibocom/motan官方文档README手动操作了一下，感觉挺好
-      上手的，而且感觉接口定义的逻辑小巧轻量。
+- - - - -
+#项目架构
+mumu-rpc-motan项目一共分为三个模块，接口模板、服务端模块、客户端模块。
+1. 接口模块主要定义一些接口，将接口单独抽取出来成为一个模快，主要是为了rpc调用。接口包括普通接口和异步调用接口，异步调用接口也就是在接口上添加@MotanAsync注解，然后在项目的pom中配置build-helper-maven-plugin插件，使用该插件生成异步调用的接口。至于具体的业务逻辑，请查看源码。
+2. 服务端模块包含各种方式开启rpc服务。
+   1. 极简单模式
+   2. consul注册中心
+   3. zookeeper模式
+   4. 手动模式
 
-          motan主要分为注册中心、服务、客户端，将服务注册到注册中心，然后客户端从注册中心获取到服务调用，客户端不必需要知
-      道服务端的存在。（这个是主体上的感觉，但是其中包含的逻辑肯定不会这么简单的，只是motan已经将其他的一些层都做了一些默
-      认配置，如序列化选择上，motan选择了hession2等。其中很多默认值可以通过浏览motan-core源码来查看。）
+#motan架构
 
-          玩了两天吧，感觉这款rpc还有很大的空间来提升，比如export服务的时候，每个服务都需要进行指定一个端口，这在正式版本
-      上是非常消耗端口号的，个人感觉这点功能是非常不友好的。（不知道是不是我理解错误了，准备明天继续查看源代码。）
+#个人观点
 
-          以上观点纯属个人观点，如有理解不到的地方，望大家指证。
-
-
+** 以上观点纯属个人看法，如有不同，欢迎指正 **
+** 联系方式 **
+** email:<babymm@aliyun.com> **
+** github:[https://github.com/babymm](https://github.com/babymm) **

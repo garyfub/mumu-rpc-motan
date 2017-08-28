@@ -1,7 +1,6 @@
 package com.lovecws.mumu.rpc.motan.client;
 
 import com.lovecws.mumu.rpc.motan.service.FooService;
-import junit.framework.TestCase;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
