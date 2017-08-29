@@ -32,7 +32,19 @@ Motan框架中主要有register、transport、serialize、protocol几个功能�
 **摘录自[weibo motan](https://github.com/weibocom/motan/wiki/zh_userguide#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D)**
 
 # 测试
+Server测试结果：
 
+请求空包：单Server极限TPS：18W
+
+请求1KString：单Server极限TPS：8.4W
+
+请求5KString：单Server极限TPS：2W
+
+Client测试结果：
+
+对比图：
+
+![测试性能对比统计图](https://github.com/weibocom/motan/wiki/media/14614085719511.jpg)
 
 # 个人观点
 ## 优点

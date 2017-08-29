@@ -24,11 +24,11 @@ public class MotanSimpleServer {
         ProtocolConfig protocol = new ProtocolConfig();
         protocol.setId("motan");
         protocol.setName("motan");
-        ExtensionLoader<JDKSerialization> extensionLoader = ExtensionLoader.initExtensionLoader(JDKSerialization.class);
-        extensionLoader.addExtensionClass(JDKSerialization.class);
-        System.out.println(extensionLoader);
+        //ExtensionLoader<JDKSerialization> extensionLoader = ExtensionLoader.initExtensionLoader(JDKSerialization.class);
+        //extensionLoader.addExtensionClass(JDKSerialization.class);
+        //System.out.println(extensionLoader);
 
-        protocol.setSerialization("jdk");
+        //protocol.setSerialization("jdk");
         serviceConfig.setProtocol(protocol);
 
         //server config

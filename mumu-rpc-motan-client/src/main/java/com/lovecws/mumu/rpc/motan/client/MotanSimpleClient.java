@@ -5,7 +5,6 @@ import com.lovecws.mumu.rpc.motan.service.FooService;
 import com.weibo.api.motan.config.ProtocolConfig;
 import com.weibo.api.motan.config.RefererConfig;
 import com.weibo.api.motan.config.RegistryConfig;
-import com.weibo.api.motan.core.extension.ExtensionLoader;
 
 public class MotanSimpleClient {
 
@@ -17,10 +16,10 @@ public class MotanSimpleClient {
         protocolConfig.setId("motan");
         protocolConfig.setName("motan");
 
-        ExtensionLoader<JDKSerialization> extensionLoader = ExtensionLoader.initExtensionLoader(JDKSerialization.class);
-        extensionLoader.addExtensionClass(JDKSerialization.class);
+        //ExtensionLoader<JDKSerialization> extensionLoader = ExtensionLoader.initExtensionLoader(JDKSerialization.class);
+        //extensionLoader.addExtensionClass(JDKSerialization.class);
 
-        protocolConfig.setSerialization("jdk");
+        //protocolConfig.setSerialization("jdk");
         refererConfig.setProtocol(protocolConfig);
 
         //registry
