@@ -5,3 +5,6 @@
 
 ## 编写测试接口(2017-08-29)
 测试motan性能
+
+## 接入motan webbench功能（2017-09-02）
+集成webbench功能，测试motan rpc接口调用。
