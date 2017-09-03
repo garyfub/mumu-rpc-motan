@@ -40,7 +40,7 @@ public class MotanBenchmarkClient extends AbstractBenchmarkClient {
 
     public static void main(String[] args) {
         int concurrents = 100;
-        int runtime = 100;//运行时间必须要大于预热时间 默认预热时间为30秒
+        int runtime = 60;//运行时间必须要大于预热时间 默认预热时间为30秒
         if(runtime<AbstractBenchmarkClient.WARMUPTIME){
             throw new IllegalArgumentException("总运行时间不能小于程序预热时间【30s】");
         }
